@@ -1,0 +1,14 @@
+services:
+  router:
+    build: .
+    env_file: .env
+    environment:
+      JEV_HFT_HOST: 0.0.0.0
+      JEV_HFT_REGISTRY: config/model_registry.demo.json
+      JEV_HFT_POLICY: config/policy.json
+      JEV_HFT_AUDIT_LOG: data/audit.jsonl
+    ports:
+      - "127.0.0.1:8000:8000"
+    volumes:
+      - ./config:/app/config:ro
+      - ./data:/app/data

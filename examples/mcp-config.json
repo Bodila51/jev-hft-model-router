@@ -1,0 +1,13 @@
+{
+  "mcpServers": {
+    "jev-hft-router": {
+      "command": "jev-hft-mcp",
+      "env": {
+        "TYPESAFE_API_KEY": "set-this-in-your-local-agent-config",
+        "JEV_HFT_BACKEND": "jev",
+        "JEV_HFT_REGISTRY": "/absolute/path/to/config/model_registry.json",
+        "JEV_HFT_POLICY": "/absolute/path/to/config/policy.json"
+      }
+    }
+  }
+}

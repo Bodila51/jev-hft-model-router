@@ -1,0 +1,23 @@
+{
+  "query": "Find a low-risk crypto market-making model for a range-bound BTC market.",
+  "market": {
+    "asset_class": "crypto",
+    "symbol": "BTC-USDT",
+    "venue": "binance",
+    "regime": "range_bound",
+    "volatility_percentile": 0.31,
+    "spread_bps": 1.4,
+    "order_book_depth_usd": 5200000,
+    "observed_latency_ms": 0.8,
+    "source": "example-only"
+  },
+  "constraints": {
+    "asset_class": "crypto",
+    "symbol": "BTC-USDT",
+    "venue": "binance",
+    "capital_usd": 100000,
+    "available_latency_ms": 1,
+    "max_drawdown": 0.12,
+    "max_risk_level": 3
+  }
+}

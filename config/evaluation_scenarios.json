@@ -1,0 +1,38 @@
+[
+  {
+    "id": "market-making-range",
+    "request": {
+      "query": "Find a low-risk market-making model for BTC in a range-bound market.",
+      "constraints": {"asset_class": "crypto", "symbol": "BTC-USDT", "max_risk_level": 3}
+    },
+    "expected_family": "market_making",
+    "acceptable_statuses": ["selected", "review_required"]
+  },
+  {
+    "id": "pairs-relative-value",
+    "request": {
+      "query": "Route this relative-value pairs trading task to a market-neutral statistical model.",
+      "constraints": {"asset_class": "equities"}
+    },
+    "expected_family": "statistical_arbitrage",
+    "acceptable_statuses": ["selected", "review_required"]
+  },
+  {
+    "id": "execution-vwap",
+    "request": {
+      "query": "Choose a VWAP-style execution model that minimizes market impact for a large parent order.",
+      "constraints": {"asset_class": "futures", "capital_usd": 500000}
+    },
+    "expected_family": "execution",
+    "acceptable_statuses": ["selected", "review_required"]
+  },
+  {
+    "id": "live-without-data",
+    "request": {
+      "query": "Which volatility strategy should I run on BTC right now?",
+      "constraints": {"asset_class": "crypto", "symbol": "BTC-USDT"}
+    },
+    "expected_family": "volatility",
+    "acceptable_statuses": ["no_trade"]
+  }
+]

@@ -1,0 +1,22 @@
+{
+  "type": "function",
+  "name": "recommend_hft_model",
+  "description": "Select the best-fit model from the connected registry. Never executes trades.",
+  "strict": false,
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "query": {"type": "string"},
+      "market": {
+        "type": ["object", "null"],
+        "additionalProperties": true
+      },
+      "constraints": {
+        "type": "object",
+        "additionalProperties": true
+      }
+    },
+    "required": ["query", "market", "constraints"],
+    "additionalProperties": false
+  }
+}

@@ -1,0 +1,41 @@
+[build-system]
+requires = ["setuptools>=69", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "jev-hft-router"
+version = "0.1.0"
+description = "A confidence-gated Jev router for selecting the best-fit strategy from a user-owned HFT model registry."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [{ name = "@51bodila" }]
+dependencies = [
+  "fastapi>=0.115,<1",
+  "pydantic>=2.7,<3",
+  "python-dotenv>=1.0,<2",
+  "typesafe-sdk>=0.7.0",
+  "uvicorn>=0.30,<1",
+]
+
+[project.optional-dependencies]
+mcp = ["mcp>=1.28,<2"]
+dev = ["httpx>=0.27,<1", "pytest>=8,<9"]
+
+[project.scripts]
+jev-hft = "jev_hft_router.cli:main"
+jev-hft-api = "jev_hft_router.api:run"
+jev-hft-mcp = "jev_hft_router.mcp_server:run"
+
+[tool.setuptools]
+package-dir = { "" = "src" }
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+jev_hft_router = ["web/*.html"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
